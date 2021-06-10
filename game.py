@@ -9,6 +9,12 @@ Github: https://www.github.com/kying18
 Programmer Beast Mode Spotify playlist: https://open.spotify.com/playlist/4Akns5EUb3gzmlXIdsJkPs?si=qGc4ubKRRYmPHAJAIrCxVQ 
 """
 
+"""
+Adopted by Wen-Chung Cheng (Andy) for A1 of Intro to AI course at Florida Atlantic University
+Github: https://github.com/Ac31415
+Email: wcheng3@fau.edu
+"""
+
 import math
 import time
 from player import HumanPlayer, RandomComputerPlayer, SmartComputerPlayer
@@ -31,6 +37,7 @@ class TicTacToe():
     def print_board_nums():
         # 0 | 1 | 2
         number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
+        print('\nLegends:\n')
         for row in number_board:
             print('| ' + ' | '.join(row) + ' |')
 
@@ -77,19 +84,25 @@ class TicTacToe():
 
 def play(game, x_player, o_player, print_game=True):
 
-    if print_game:
-        game.print_board_nums()
+    # if print_game:
+    #     game.print_board_nums()
+    
+    print('Game starts:\n')
+    
+    game.print_board()
 
     letter = 'X'
     while game.empty_squares():
         if letter == 'O':
             square = o_player.get_move(game)
         else:
+            if print_game:
+                game.print_board_nums()
             square = x_player.get_move(game)
         if game.make_move(square, letter):
 
             if print_game:
-                print(letter + ' makes a move to square {}'.format(square))
+                print('\n' + letter + ' makes a move to square {}'.format(square) + '\n')
                 game.print_board()
                 print('')
 
@@ -107,7 +120,17 @@ def play(game, x_player, o_player, print_game=True):
 
 
 if __name__ == '__main__':
-    x_player = SmartComputerPlayer('X')
-    o_player = HumanPlayer('O')
-    t = TicTacToe()
-    play(t, x_player, o_player, print_game=True)
+    Cont = True
+    while Cont:
+        x_player = HumanPlayer('X')
+        o_player = SmartComputerPlayer('O')
+        t = TicTacToe()
+        play(t, x_player, o_player, print_game=True)
+        answer = input("Play again? (Y/N): ")
+        while answer != 'y' and answer != 'n' and answer != 'Y' and answer != 'N' and answer != 'yes' and answer != 'no' and answer != 'Yes' and answer != 'No':
+            answer = input("Invalid answer, try again (Y/N): ")
+        if answer == 'Y' or answer == 'y' or answer == 'Yes' or answer == 'yes':
+            pass
+        else:
+            Cont = False
+            print("\nGood bye!")

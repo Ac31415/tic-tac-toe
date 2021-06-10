@@ -6,7 +6,13 @@ Twitter @kylieyying: https://twitter.com/kylieyying
 Instagram @kylieyying: https://www.instagram.com/kylieyying/ 
 Website: https://www.kylieying.com
 Github: https://www.github.com/kying18 
-Programmer Beast Mode Spotify playlist: https://open.spotify.com/playlist/4Akns5EUb3gzmlXIdsJkPs?si=qGc4ubKRRYmPHAJAIrCxVQ 
+Programmer Beast Mode Spotify playlist: https://open.spotify.com/playlist/4Akns5EUb3gzmlXIdsJkPs?si=qGc4ubKRRYmPHAJAIrCxVQ
+"""
+
+"""
+Adopted by Wen-Chung Cheng (Andy) for A1 of Intro to AI course at Florida Atlantic University
+Github: https://github.com/Ac31415
+Email: wcheng3@fau.edu
 """
 
 import math
@@ -29,14 +35,14 @@ class HumanPlayer(Player):
         valid_square = False
         val = None
         while not valid_square:
-            square = input(self.letter + '\'s turn. Input move (0-9): ')
+            square = input(self.letter + '\'s (your) turn. Input move (0-8): ')
             try:
                 val = int(square)
                 if val not in game.available_moves():
                     raise ValueError
                 valid_square = True
             except ValueError:
-                print('Invalid square. Try again.')
+                print('\nInvalid square. Try again.')
         return val
 
 
