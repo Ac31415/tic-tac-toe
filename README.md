@@ -20,3 +20,7 @@ Changes to the original:
 
 -- Code has been edited so that the output
    is more visually pleasing
+
+How to use the game.py file:
+
+-- In order for the program to run appropriately, it has to be in the same directory as the player.py file
