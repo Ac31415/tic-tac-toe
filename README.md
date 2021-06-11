@@ -1,6 +1,8 @@
 # tic-tac-toe
 Tic-Tac-Toe with Adversarial search algorithm - Intro to AI Class Homework at Florida Atlantic University
 
+Changes to the original:
+
 -- X is now the player
 
 -- O is now the CPU
