@@ -13,6 +13,8 @@ Tic-Tac-Toe with Adversarial search algorithm - Intro to AI Class Homework at Fl
 
 -- When the game ends, the user will get asked if
    they want another round of the game
-   
+
+-- If the user gives an answer other than Yes or No, they'd be prompted to answer again with Yes or No
+
 -- Code has been edited so that the output
    is more visually pleasing
